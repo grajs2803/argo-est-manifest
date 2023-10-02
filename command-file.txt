@@ -1,0 +1,26 @@
+k create secret generic dotfile-secret-be \
+--from-literal=BE_HOST=http://backend-app:7000 \
+--from-literal=FE_HOST=http://frontend-app:3000 \
+--from-literal=JWT_SECRET=my_secret \
+--from-literal=MONGODB_URI=mongodb+srv://developer:developer@cluster0.deidv.mongodb.net/temtum \
+--from-literal=REDIS_HOST=redis \
+--from-literal=MAILER_API_KEY=key-b8877f38d0e8c106aa030c1592458bac \
+--from-literal=MAILER_DOMAIN=sandbox4224a4c1e735413e913842ff375a7325.mailgun.org \
+--from-literal=GRAPH_TENANT_ID=9f2c0703-7a4d-4183-bc97-8b134023c658 \
+--from-literal=GRAPH_CLIENT_ID=b91c8bfd-b986-4345-835e-595e59453da3 \
+--from-literal=GRAPH_CLIENT_SECRET=k8t8Q~zyHTZXt-9Slhod3MZDNPq8XdwQ3tGVpakN \
+--from-literal=GRAPH_USER_ID=customerservice@allpayments.online \
+--from-literal=PESAPAL_CKEY=vknEWEEFeygxAX+C9TPOhvkbkPsj8qXK \
+--from-literal=PESAPAL_CSECRET=MOOP31smKijvusQbNXn/s7m8jC8= \
+--from-literal=FIXER_API_KEY=7b8828ebffe8ab96db8c8ecd7908faa5 \
+--from-literal=YOTI_API_URL=https://api.yoti.com/sandbox/v1 \
+--from-literal=YOTI_IDV_API_URL=https://api.yoti.com/sandbox/idverify/v1 \
+--from-literal=YOTI_CLIENT_SDK_ID=9ad84cc2-6aab-4cf6-8ce1-d208e3d10b62 \
+--from-literal=FLEXIPAY_CLIENT_ID=7127f7c89c35c8a0809ae9e10aa99b06 \
+--from-literal=FLEXIPAY_CLIENT_SECRET=dc1cd25b5d86a77f3844748a03338610 \
+--from-literal=FLEXIPAY_PASSWORD=e1nmpuA+x6y+5QBoHJ95f0MGqovBtfdctEbaWwJYydqZjIOjwu3BOKUYFrs99zUB 
+
+
+---------------------------------------------------------------------------------------------------
+
+kubeseal --format=yaml < secret.yaml > sealed-secret.yaml
